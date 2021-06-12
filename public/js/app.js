@@ -52,10 +52,10 @@ let idNum = 0;
 function newContent(el) {
   content.innerHTML += `<div
   id="todoEl"
-  class="flex mb-4 justify-evenly md:items-center md:justify-between"
+  class="flex mb-4 justify-evenly items-center sm:justify-between"
   data-todo-number="${idNum += 1}"
 >
-  <div class="todo-text w-48 md:w-96 h-auto text-2xl">
+  <div class="todo-text w-48 sm:w-96 h-auto text-2xl">
     <p class="break-words">
     ${el}
     </p>

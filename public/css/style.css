@@ -1404,8 +1404,8 @@ video {
   width: 3rem;
 }
 
-.w-80 {
-  width: 20rem;
+.w-60 {
+  width: 15rem;
 }
 
 .w-96 {
@@ -1817,6 +1817,10 @@ video {
     }
   }
 
+  .sm\:flex {
+    display: flex;
+  }
+
   .sm\:font-bold {
     font-weight: 700;
   }
@@ -1841,6 +1845,10 @@ video {
 
   .sm\:tabular-nums {
     --tw-numeric-spacing: tabular-nums;
+  }
+
+  .sm\:w-full {
+    width: 100%;
   }
 }
 
@@ -1879,10 +1887,6 @@ video {
     }
   }
 
-  .md\:flex {
-    display: flex;
-  }
-
   .md\:font-bold {
     font-weight: 700;
   }
@@ -1907,10 +1911,6 @@ video {
 
   .md\:text-center {
     text-align: center;
-  }
-
-  .md\:w-full {
-    width: 100%;
   }
 }
 
