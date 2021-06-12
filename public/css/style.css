@@ -553,6 +553,21 @@ video {
   height: auto;
 }
 
+#content::-webkit-scrollbar {
+  width: 5px;
+}
+
+#content::-webkit-scrollbar-track {
+  /* background: white; */
+  border-radius: 50px;
+  background: #edf2f7;
+}
+
+#content::-webkit-scrollbar-thumb {
+  background-color: #000; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+}
+
 .container {
   width: 100%;
 }
