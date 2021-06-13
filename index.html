@@ -4,32 +4,46 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#edf2f7">
-    <!-- <link
-      href="https://unpkg.com/tailwindcss@0.3.0/dist/tailwind.min.css"
-      rel="stylesheet"
-    /> -->
+    <meta name="google" content="notranslate" />
+    <meta name="theme-color" content="#edf2f7" />
     <link rel="stylesheet" href="./public/css/style.css" />
   </head>
   <body
-    class="h-screen overflow-hidden flex flex-col items-center justify-between"
+    class="h-screen"
     style="background: #edf2f7"
   >
-    <div
-      class="
-        h-full
-        w-11/12
-        sm:w-full
-        flex
-        items-center
-        justify-center
-        bg-teal-lightest
-        font-sans
-      "
-    >
-      <div class="bg-white rounded shadow p-4 sm:p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
+    <div class="container overflow-hidden flex flex-col items-center justify-between h-screen">
+      <div
+        class="
+          h-full
+          w-11/12
+          sm:w-full
+          flex
+          flex-col
+          items-center
+          justify-between
+          bg-teal-lightest
+          font-sans
+        "
+      >
+       <div class="content-form h-full flex items-center justify-center w-full">
+        <div
+        class="
+          bg-white
+          rounded
+          shadow
+          p-4
+          sm:p-6
+          m-4
+          w-full
+          lg:w-3/4
+          lg:max-w-lg
+        "
+      >
         <div class="mb-8 sm:mb-4 flex flex-col items-center">
-          <h1 class="text-gray-600 text-3xl sm:text-5xl text-center font-bold">
+          <h1
+            class="text-gray-600 text-3xl sm:text-5xl text-center font-bold"
+          >
             Todo List
           </h1>
           <div class="flex mt-4 w-full text-center justify-center">
@@ -68,17 +82,38 @@
             </button>
           </div>
         </div>
-        <div id="content" class="h-auto max-h-64 md:h-64 overflow-auto transition-all ease-in-out">
-         
-        </div>
+        <div
+          id="content"
+          class="
+            h-auto
+            max-h-64
+            md:h-64
+            overflow-auto
+            transition-all
+            ease-in-out
+          "
+        ></div>
+      </div>
+       </div>
+
+        <footer
+      class="flex flex-col items-center text-gray-600 text-sm font-semibold"
+    >
+      <p>All Right Reserved</p>
+      <p>made with 🧡 by @azizsige</p>
+      <p class="">
+        Special Thanks to
+        <a
+          class="underline"
+          href="https://tailwindcomponents.com/component/todo-list-app"
+          >tailwindcomponents</a
+        >
+      </p>
+    </footer>
       </div>
     </div>
 
-    <footer class="flex flex-col items-center text-gray-600 text-sm font-semibold">
-      <p>All Right Reserved</p>
-      <p>made with 🧡  by @azizsige</p>
-      <p class="">Special Thanks to <a class="underline" href="https://tailwindcomponents.com/component/todo-list-app">tailwindcomponents</a></p>
-    </footer>
+    
 
     <script src="./public/js/app.js"></script>
   </body>
