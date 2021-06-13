@@ -924,10 +924,6 @@ video {
   height: 7rem;
 }
 
-.h-64 {
-  height: 16rem;
-}
-
 .h-auto {
   height: auto;
 }
@@ -1023,6 +1019,10 @@ video {
 
 .mr-0\.5 {
   margin-right: 0.125rem;
+}
+
+.max-h-64 {
+  max-height: 16rem;
 }
 
 .max-h-screen {
@@ -1961,6 +1961,10 @@ video {
 
   .md\:font-bold {
     font-weight: 700;
+  }
+
+  .md\:h-64 {
+    height: 16rem;
   }
 
   .md\:opacity-50 {
