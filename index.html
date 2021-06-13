@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#edf2f7">
     <!-- <link
       href="https://unpkg.com/tailwindcss@0.3.0/dist/tailwind.min.css"
       rel="stylesheet"
@@ -11,12 +12,12 @@
     <link rel="stylesheet" href="./public/css/style.css" />
   </head>
   <body
-    class="h-screen overflow-hidden flex items-center justify-center"
+    class="h-screen overflow-hidden flex flex-col items-center justify-between"
     style="background: #edf2f7"
   >
     <div
       class="
-        h-100
+        h-full
         w-11/12
         sm:w-full
         flex
@@ -72,6 +73,12 @@
         </div>
       </div>
     </div>
+
+    <footer class="flex flex-col items-center text-gray-600 text-sm font-semibold">
+      <p>All Right Reserved</p>
+      <p>made with 🧡  by @azizsige</p>
+      <p class="">Special Thanks to <a class="underline" href="https://tailwindcomponents.com/component/todo-list-app">tailwindcomponents</a> for The Design Mockup</p>
+    </footer>
 
     <script src="./public/js/app.js"></script>
   </body>
