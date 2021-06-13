@@ -4,69 +4,26 @@ const removeBtn = document.getElementById("remove");
 let content = document.getElementById("content");
 let idNum = 0;
 
-{/* <div
-  id="todoEl"
-  class="flex mb-4 items-center justify-between"
-  data-todo-number="${idNum += 1}"
->
-  <div class="todo-text w-96 h-auto bg-red-600 border-2 border-green-600">
-    <p class="break-words overflow-y-auto">
-    ${el}
-    </p>
-  </div>
-  <div class="todo-button flex">
-    <button
-      class="
-                  flex-no-shrink
-                  p-2
-                  ml-4
-                  mr-2
-                  border-2 border-green-500
-                  rounded
-                  hover:text-white
-                  text-green-500
-                  hover:bg-green-500
-                "
-    >
-      Done
-    </button>
-    <button
-      id="remove"
-      class="
-                  flex-no-shrink
-                  p-2
-                  ml-2
-                  border-2
-                  rounded
-                  text-red-500
-                  border-red-500
-                  hover:text-white
-                  hover:bg-red-500
-                "
-    >
-      Remove
-    </button>
-  </div>
-</div>; */}
-
 function newContent(el) {
   content.innerHTML += `<div
   id="todoEl"
-  class="flex mb-4 justify-evenly items-center sm:justify-between"
-  data-todo-number="${idNum += 1}"
+  class="flex py-8 sm:py-0 border-b-2 border-gray-300 sm:border-none sm:mb-8 justify-evenly items-center sm:justify-between"
+  data-todo-number="${(idNum += 1)}"
 >
-  <div class="todo-text w-48 sm:w-96 h-auto text-2xl">
+  <div class="todo-text w-28 sm:w-96 md:w-72 h-auto text-xl sm:text-2xl">
     <p class="break-words">
     ${el}
     </p>
   </div>
-  <div class="todo-button flex">
+  <div class="todo-button flex flex-col sm:flex-row h-28 mr-0.5 sm:mr-3 justify-between sm:h-auto">
     <button
       class="
                   flex-no-shrink
                   p-2
-                  ml-4
-                  mr-2
+                  ml-2
+                  sm:ml-4
+                  mr-0
+                  sm:mr-2
                   border-2 border-green-500
                   rounded
                   hover:text-white
@@ -109,21 +66,33 @@ function remove(numId) {
 }
 
 input.addEventListener("keyup", function (event) {
-  if (event.keyCode === 13) {
-    event.preventDefault();
-    newContent(input.value);
+  if (input.value == "") {
+    alert("Coba Lagi!");
+  } else {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      newContent(input.value);
+    }
   }
 });
 
 add_btn.addEventListener("click", function () {
-  newContent(input.value);
+  if (input.value == "") {
+    alert("Coba Lagi!");
+  } else {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      newContent(input.value);
+    }
+  }
 });
 
 window.addEventListener("click", function (event) {
   const target = event.target;
 
   if (target.id === "remove") {
-    const todoContent = target.parentElement;
+    const todoContents = target.parentElement;
+    const todoContent = todoContents.parentElement;
     console.log(event);
     console.log(todoContent);
     todoContent.remove();

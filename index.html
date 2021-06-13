@@ -17,7 +17,8 @@
     <div
       class="
         h-100
-        w-full
+        w-11/12
+        sm:w-full
         flex
         items-center
         justify-center
@@ -25,12 +26,12 @@
         font-sans
       "
     >
-      <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
-        <div class="mb-4 flex flex-col items-center">
-          <h1 class="text-gray-600 text-5xl text-center font-bold">
+      <div class="bg-white rounded shadow p-4 sm:p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
+        <div class="mb-8 sm:mb-4 flex flex-col items-center">
+          <h1 class="text-gray-600 text-3xl sm:text-5xl text-center font-bold">
             Todo List
           </h1>
-          <div class="sm:flex mt-4 w-full text-center">
+          <div class="flex mt-4 w-full text-center justify-center">
             <input
               id="input"
               class="
@@ -38,7 +39,7 @@
                 appearance-none
                 border
                 rounded
-                w-60
+                w-40
                 sm:w-full
                 py-2
                 px-3
@@ -46,6 +47,7 @@
                 text-grey-darker
               "
               placeholder="Add Todo"
+              required
             />
             <button
               id="btn"
@@ -66,48 +68,7 @@
           </div>
         </div>
         <div id="content" class="h-64 overflow-auto">
-          <!-- <div
-            id="todoEl"
-            class="flex mb-4 items-center justify-between"
-            data-todo-number="${idNum += 1}"
-          >
-            <div class="todo-text w-96 h-auto bg-red-600 border-2 border-green-600">
-              <p class="break-words overflow-y-auto">hellafasfafafafaadfafafadfadfadfadfadadfafadfadgdagagadgadagagagagagagagagagagddagfagagagagagagadagadgagagadgagagoadahfadfadihoaafafafadfafafdafdafadhfoiadhfiohadafasfafsfafafafsfsafsfafaasfafafasfafafasafafafafafsfsfasfafsfafsafafafsafsafaiofhadhfoadfoihoifadfhadhfuhadfa</p>
-            </div>
-            <div class="todo-button flex">
-              <button
-                class="
-                  flex-no-shrink
-                  p-2
-                  ml-4
-                  mr-2
-                  border-2 border-green-500
-                  rounded
-                  hover:text-white
-                  text-green-500
-                  hover:bg-green-500
-                "
-              >
-                Done
-              </button>
-              <button
-                id="remove"
-                class="
-                  flex-no-shrink
-                  p-2
-                  ml-2
-                  border-2
-                  rounded
-                  text-red-500
-                  border-red-500
-                  hover:text-white
-                  hover:bg-red-500
-                "
-              >
-                Remove
-              </button>
-            </div>
-          </div> -->
+         
         </div>
       </div>
     </div>

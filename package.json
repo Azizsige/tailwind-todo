@@ -1,23 +1,16 @@
 {
-  "name": "todo-list",
+  "name": "todo-list-v2",
   "version": "1.0.0",
-  "description": "Simple Todo App Using Vanilla Javascript and Tailwind Css",
-  "main": "app.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tailwind build ./src/tailwind.css -o ./public/css/style.css",
-    "production": "NODE_ENV=production tailwind build ./src/tailwind.css -o ./public/css/style.css"
+    "build": "tailwindcss build ./src/tailwind.css -o ./public/css/style.css",
+    "production": "NODE_ENV=production tailwindcss build ./src/tailwind.css -o ./public/css/style.css"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Azizsige/tailwind-todo.git"
-  },
-  "author": "azizsige",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Azizsige/tailwind-todo/issues"
-  },
-  "homepage": "https://github.com/Azizsige/tailwind-todo#readme",
   "dependencies": {
     "autoprefixer": "^10.2.6",
     "postcss": "^8.3.2",
