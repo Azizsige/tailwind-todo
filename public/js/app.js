@@ -7,7 +7,7 @@ let idNum = 0;
 function newContent(el) {
   content.innerHTML += `<div
   id="todoEl"
-  class="flex py-8 sm:py-0 border-b-2 border-gray-300 sm:border-none sm:mb-8 justify-evenly items-center sm:justify-between"
+  class="flex py-8 sm:py-0 border-b-2 border-gray-300 sm:border-none sm:mb-8 justify-evenly items-center sm:justify-between transition-all ease-in-out"
   data-todo-number="${(idNum += 1)}"
 >
   <div class="todo-text w-28 sm:w-96 md:w-72 h-auto text-xl sm:text-2xl">
@@ -66,24 +66,30 @@ function remove(numId) {
 }
 
 input.addEventListener("keyup", function (event) {
-  if (input.value == "") {
-    alert("Coba Lagi!");
-  } else {
-    if (event.keyCode === 13) {
+  const value = input.value;
+  const trimmed = value.trim();
+
+  if (event.keyCode === 13) {
+    if (trimmed) {
       event.preventDefault();
       newContent(input.value);
+    } else {
+      alert("Coba Lagi");
+      input.value = ''
     }
   }
 });
 
-add_btn.addEventListener("click", function () {
-  if (input.value == "") {
-    alert("Coba Lagi!");
+add_btn.addEventListener("click", function (event) {
+  const value = input.value;
+  const trimmed = value.trim();
+
+  if (trimmed) {
+    event.preventDefault();
+    newContent(input.value);
   } else {
-    if (event.keyCode === 13) {
-      event.preventDefault();
-      newContent(input.value);
-    }
+    alert("Coba Lagi");
+    input.value = ''
   }
 });
 
