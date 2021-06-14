@@ -4,18 +4,20 @@ let content = document.getElementById("content");
 let numberTodos = document.getElementById("numberTodos");
 let todoDones = document.getElementById("todoDone");
 let alertClose = document.getElementById("alertClose");
-let doneNum = 0;
 const add_btn = document.getElementById("btn");
 const removeBtn = document.getElementById("remove");
 const textTodo = document.getElementById("text-todo");
+const textTodos = document.getElementsByClassName("text-todo");
 const alert = document.getElementById("alert");
 let idNum = 0;
+let doneNum = 0;
+
 todoDones.innerHTML = doneNum;
 
 function newContent(el) {
   content.innerHTML += `<div
   id="todoEl"
-  class="todoEl flex py-8 sm:py-0 sm:mb-8 justify-evenly items-center sm:justify-between transition-all ease-in-out"
+  class="todoEl flex pt-4 pb-8 sm:py-0 sm:mb-8 justify-evenly items-center sm:justify-between transition-all ease-in-out"
   data-todo-number="${(idNum += 1)}"
 >
   <div class="todo-text w-28 sm:w-96 md:w-72 h-auto text-xl sm:text-2xl">
@@ -63,7 +65,7 @@ function newContent(el) {
   </div>
 </div>`;
   numberTodos.innerText = content.childElementCount;
-  alert.classList.remove("opacity-100")
+  alert.classList.remove("opacity-100");
 
   input.value = "";
   return content;
@@ -87,8 +89,8 @@ input.addEventListener("keyup", function (event) {
       event.preventDefault();
       newContent(input.value);
     } else {
-      alert.classList.add("opacity-100")
-    input.value = "";
+      alert.classList.add("opacity-100");
+      input.value = "";
     }
   }
 });
@@ -107,9 +109,9 @@ add_btn.addEventListener("click", function (event) {
   }
 });
 
-alertClose.addEventListener('click', function(){
-  alert.classList.toggle("opacity-100")
-})
+alertClose.addEventListener("click", function () {
+  alert.classList.toggle("opacity-100");
+});
 
 window.addEventListener("click", function (event) {
   const target = event.target;
@@ -122,8 +124,10 @@ window.addEventListener("click", function (event) {
     todoContent.remove();
 
     numberTodos.innerText = content.childElementCount;
-    doneNum -= 1;
-    todoDones.innerHTML = doneNum;
+    // doneNum = textTodos.length;
+    // todoDones.innerHTML = doneNum;
+    let Texttodo = textTodos.length;
+    todoDones.innerHTML = Texttodo;
   }
 
   if (target.id === "done") {
@@ -145,8 +149,11 @@ window.addEventListener("click", function (event) {
       console.log(textDone);
       textDone.classList.toggle("text-gray-400");
       textDone.classList.toggle("line-through");
-      doneNum += 1;
-      todoDones.innerHTML = doneNum;
+      textDone.classList.toggle("text-todo");
+      let Texttodo = textTodos.length;
+      // console.log(Texttodo)
+      // doneNum += 1;
+      todoDones.innerHTML = Texttodo;
     } else {
       let textBtn = target.innerText;
       console.log(textBtn);
@@ -165,8 +172,9 @@ window.addEventListener("click", function (event) {
       console.log(textDone);
       textDone.classList.toggle("text-gray-400");
       textDone.classList.toggle("line-through");
-      doneNum -= 1;
-      todoDones.innerHTML = doneNum;
+      textDone.classList.toggle("text-todo");
+      let Texttodo = textTodos.length;
+      todoDones.innerHTML = Texttodo;
     }
   }
 });

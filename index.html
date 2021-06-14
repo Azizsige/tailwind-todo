@@ -23,7 +23,7 @@
         class="
           h-full
           w-11/12
-          sm:w-full
+          
           flex flex-col
           items-center
           justify-between
@@ -48,13 +48,14 @@
               shadow
               p-4
               sm:p-6
+              sm:m-4
               m-4
               w-full
               lg:w-3/4
               lg:max-w-lg
             "
           >
-            <div class="mb-8 sm:mb-4 flex flex-col items-center">
+            <div class="sm:mb-4 flex flex-col items-center">
               <div class="todo-heading">
                 <h1
                   class="
@@ -110,7 +111,7 @@
                     focus:ring-2 focus:ring-blue-300
                     focus:border-transparent
                     rounded
-                    w-40
+                    w-full
                     sm:w-full
                     py-2
                     px-3
@@ -137,38 +138,40 @@
                   Add
                 </button>
               </div>
-            </div>
-            <div
-              id="content"
-              class="
-                h-auto
-                max-h-64
-                md:h-64
-                overflow-auto
-                transition-all
-                ease-in-out
-              "
-            ></div>
-          </div>
-          <div
+
+              <div
             class="
               history-todo
               self-start
               sm:self-center
               flex
               justify-between
+              w-scren
+              mt-4
+              mb-4
               w-full
-              sm:w-6/12
-              md:w-2/5
             "
           >
             <p class="text-sm">
-              <em id="numberTodos" class="text-red-600">0</em> Todo in your list
+              <em id="numberTodos" class="text-red-600 font-bold">0</em> Todo in your list
             </p>
             <p class="text-sm">
-              <em id="todoDone" class="text-green-600"></em> Todo is done!
+              <em id="todoDone" class="text-green-600 font-bold"></em> Todo is done!
             </p>
           </div>
+            </div>
+            <div
+              id="content"
+              class="
+                h-auto
+                max-h-64
+                overflow-auto
+                transition-all
+                ease-in-out
+              "
+            ></div>
+          </div>
+          
         </div>
       </div>
       <footer
