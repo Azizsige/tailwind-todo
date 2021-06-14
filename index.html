@@ -8,118 +8,184 @@
     <meta name="theme-color" content="#edf2f7" />
     <link rel="stylesheet" href="./public/css/style.css" />
   </head>
-  <body
-    class="h-screen"
-    style="background: #edf2f7"
-  >
-    <div class="Container overflow-hidden flex flex-col items-center justify-between h-screen">
+  <body class="h-screen" style="background: #edf2f7">
+    <div
+      class="
+        Container
+        overflow-hidden
+        flex flex-col
+        items-center
+        justify-between
+        h-screen
+      "
+    >
       <div
         class="
           h-full
           w-11/12
           sm:w-full
-          flex
-          flex-col
+          flex flex-col
           items-center
           justify-between
           bg-teal-lightest
           font-sans
         "
       >
-       <div class="content-form h-full flex flex-col items-center justify-center w-full">
         <div
-        class="
-          bg-white
-          rounded
-          shadow
-          p-4
-          sm:p-6
-          m-4
-          w-full
-          lg:w-3/4
-          lg:max-w-lg
-        "
-      >
-        <div class="mb-8 sm:mb-4 flex flex-col items-center">
-          <h1
-            class="text-gray-600 text-3xl sm:text-5xl text-center font-bold"
+          class="
+            content-form
+            h-full
+            flex flex-col
+            items-center
+            justify-center
+            w-full
+          "
+        >
+          <div
+            class="
+              bg-white
+              rounded
+              shadow
+              p-4
+              sm:p-6
+              m-4
+              w-full
+              lg:w-3/4
+              lg:max-w-lg
+            "
           >
-            Todo List
-          </h1>
-          <div class="flex mt-4 w-full text-center justify-center">
-            <input
-              id="input"
+            <div class="mb-8 sm:mb-4 flex flex-col items-center">
+              <div class="todo-heading">
+                <h1
+                  class="
+                    text-gray-600 text-3xl
+                    sm:text-5xl
+                    text-center
+                    font-bold
+                    mb-4
+                  "
+                >
+                  Todo List
+                </h1>
+              </div>
+
+              <!-- Alert Error -->
+              <div id="alert"
+                class="
+                  opacity-0
+                  bg-red-200
+                  px-2
+                  py-1
+                  rounded-md
+                  text-lg
+                  flex
+                  items-center
+                  w-full
+                "
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  class="text-red-600 w-5 h-5 sm:w-5 sm:h-5 mr-3"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  ></path>
+                </svg>
+                <div class="alert-text flex justify-between w-full">
+                  <span class="text-red-800"> Please, fill the input </span>
+                <span id="alertClose" class="text-red-800 mr-2 cursor-pointer"> X </span>
+                </div>
+              </div>
+              <!-- End Alert Error -->
+
+              <div class="flex mt-4 w-full text-center justify-center">
+                <input
+                  id="input"
+                  class="
+                    shadow
+                    appearance-none
+                    border
+                    focus:outline-none
+                    focus:ring-2 focus:ring-blue-300
+                    focus:border-transparent
+                    rounded
+                    w-40
+                    sm:w-full
+                    py-2
+                    px-3
+                    mr-4
+                    text-grey-darker
+                  "
+                  placeholder="Add Todo"
+                  required
+                />
+                <button
+                  id="btn"
+                  class="
+                    flex-no-shrink
+                    p-2
+                    border-2
+                    rounded
+                    border-blue-500
+                    text-blue-500 text-teal
+                    border-teal
+                    hover:text-white
+                    hover:bg-blue-600
+                  "
+                >
+                  Add
+                </button>
+              </div>
+            </div>
+            <div
+              id="content"
               class="
-                shadow
-                appearance-none
-                border
-                rounded
-                w-40
-                sm:w-full
-                py-2
-                px-3
-                mr-4
-                text-grey-darker
+                h-auto
+                max-h-64
+                md:h-64
+                overflow-auto
+                transition-all
+                ease-in-out
               "
-              placeholder="Add Todo"
-              required
-            />
-            <button
-              id="btn"
-              class="
-                flex-no-shrink
-                p-2
-                border-2
-                rounded
-                border-blue-500
-                text-blue-500 text-teal
-                border-teal
-                hover:text-white
-                hover:bg-blue-600
-              "
-            >
-              Add
-            </button>
+            ></div>
+          </div>
+          <div
+            class="
+              history-todo
+              self-start
+              sm:self-center
+              flex
+              justify-between
+              w-full
+              sm:w-6/12
+              md:w-2/5
+            "
+          >
+            <p class="text-sm">
+              <em id="numberTodos" class="text-red-600">0</em> Todo in your list
+            </p>
+            <p class="text-sm">
+              <em id="todoDone" class="text-green-600"></em> Todo is done!
+            </p>
           </div>
         </div>
-        <div
-          id="content"
-          class="
-            h-auto
-            max-h-64
-            md:h-64
-            overflow-auto
-            transition-all
-            ease-in-out
-          "
-        ></div>
-      </div>
-      <div class="history-todo self-start sm:self-center flex justify-between w-full sm:w-6/12">
-        <p class=" text-sm"><em id="numberTodos" class="text-red-600">0</em> Todo in your list</p>
-        <p class=" text-sm"><em id="todoDone" class="text-green-600"></em> Todo is done!</p>
-      </div>
-       </div>
-
-       
-        
       </div>
       <footer
-      class="flex flex-col items-center text-gray-600 text-sm font-semibold"
-    >
-      <p>All Right Reserved</p>
-      <p>made with 🧡 by @azizsige</p>
-      <p class="">
-        Special Thanks to
-        <a
-          class="underline"
-          href="https://tailwindcomponents.com/component/todo-list-app"
-          >tailwindcomponents</a
-        >
-      </p>
-    </footer>
+        class="flex flex-col items-center text-gray-600 text-sm font-semibold"
+      >
+        <p>All Right Reserved</p>
+        <p>made with 🧡 by @azizsige</p>
+        <p class="">
+          Special Thanks to
+          <a
+            class="underline"
+            href="https://tailwindcomponents.com/component/todo-list-app"
+            >tailwindcomponents</a
+          >
+        </p>
+      </footer>
     </div>
-
-    
 
     <script src="./public/js/app.js"></script>
   </body>

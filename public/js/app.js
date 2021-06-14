@@ -1,20 +1,21 @@
 let input = document.getElementById("input");
-const add_btn = document.getElementById("btn");
-const removeBtn = document.getElementById("remove");
 let todoEl = document.querySelectorAll(".todoEl");
 let content = document.getElementById("content");
 let numberTodos = document.getElementById("numberTodos");
-// let todoDone = parseInt(todoDones.innerText);
 let todoDones = document.getElementById("todoDone");
+let alertClose = document.getElementById("alertClose");
 let doneNum = 0;
-todoDones.innerHTML = doneNum;
+const add_btn = document.getElementById("btn");
+const removeBtn = document.getElementById("remove");
 const textTodo = document.getElementById("text-todo");
+const alert = document.getElementById("alert");
 let idNum = 0;
+todoDones.innerHTML = doneNum;
 
 function newContent(el) {
   content.innerHTML += `<div
   id="todoEl"
-  class="todoEl flex py-8 sm:py-0 border-b-2 border-gray-300 sm:border-none sm:mb-8 justify-evenly items-center sm:justify-between transition-all ease-in-out"
+  class="todoEl flex py-8 sm:py-0 sm:mb-8 justify-evenly items-center sm:justify-between transition-all ease-in-out"
   data-todo-number="${(idNum += 1)}"
 >
   <div class="todo-text w-28 sm:w-96 md:w-72 h-auto text-xl sm:text-2xl">
@@ -62,6 +63,7 @@ function newContent(el) {
   </div>
 </div>`;
   numberTodos.innerText = content.childElementCount;
+  alert.classList.remove("opacity-100")
 
   input.value = "";
   return content;
@@ -85,8 +87,8 @@ input.addEventListener("keyup", function (event) {
       event.preventDefault();
       newContent(input.value);
     } else {
-      alert("Coba Lagi");
-      input.value = "";
+      alert.classList.add("opacity-100")
+    input.value = "";
     }
   }
 });
@@ -94,15 +96,20 @@ input.addEventListener("keyup", function (event) {
 add_btn.addEventListener("click", function (event) {
   const value = input.value;
   const trimmed = value.trim();
+  const alert = document.getElementById("alert");
 
   if (trimmed) {
     event.preventDefault();
     newContent(input.value);
   } else {
-    alert("Coba Lagi");
+    alert.classList.add("opacity-100");
     input.value = "";
   }
 });
+
+alertClose.addEventListener('click', function(){
+  alert.classList.toggle("opacity-100")
+})
 
 window.addEventListener("click", function (event) {
   const target = event.target;
