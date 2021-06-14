@@ -4,6 +4,10 @@ const removeBtn = document.getElementById("remove");
 let todoEl = document.querySelectorAll(".todoEl");
 let content = document.getElementById("content");
 let numberTodos = document.getElementById("numberTodos");
+// let todoDone = parseInt(todoDones.innerText);
+let todoDones = document.getElementById("todoDone");
+let doneNum = 0;
+todoDones.innerHTML = doneNum;
 const textTodo = document.getElementById("text-todo");
 let idNum = 0;
 
@@ -27,10 +31,12 @@ function newContent(el) {
                   sm:ml-4
                   mr-0
                   sm:mr-2
-                  border-2 border-green-500
+                  border-2 
+                  border-green-500
                   rounded
                   hover:text-white
-                  text-green-500
+                  focus:outline-none
+                   text-green-500
                   hover:bg-green-500
                 "
     >
@@ -44,6 +50,7 @@ function newContent(el) {
                   ml-2
                   border-2
                   rounded
+                  focus:outline-none
                   text-red-500
                   border-red-500
                   hover:text-white
@@ -111,14 +118,46 @@ window.addEventListener("click", function (event) {
   }
 
   if (target.id === "done") {
-    const btnParent = target.parentElement;
-    console.log(btnParent);
-    const btnSibling = btnParent.previousElementSibling;
-    console.log(btnSibling);
-    const textDone = btnSibling.children[0];
-    console.log(textDone);
-    textDone.classList.toggle('text-green-500')
-    textDone.classList.toggle('line-through')
-
+    if (target.innerText === "Done") {
+      let textBtn = target.innerText;
+      console.log(textBtn);
+      target.classList.toggle("border-green-500");
+      target.classList.toggle("hover:bg-green-500");
+      target.classList.toggle("text-green-500");
+      target.classList.toggle("border-gray-500");
+      target.classList.toggle("hover:bg-gray-500");
+      target.classList.toggle("text-gray-500");
+      target.innerText = "Not Done!";
+      const btnParent = target.parentElement;
+      console.log(btnParent);
+      const btnSibling = btnParent.previousElementSibling;
+      console.log(btnSibling);
+      const textDone = btnSibling.children[0];
+      console.log(textDone);
+      textDone.classList.toggle("text-gray-400");
+      textDone.classList.toggle("line-through");
+      doneNum += 1;
+      todoDones.innerHTML = doneNum;
+    } else {
+      let textBtn = target.innerText;
+      console.log(textBtn);
+      target.classList.toggle("border-green-500");
+      target.classList.toggle("hover:bg-green-500");
+      target.classList.toggle("text-green-500");
+      target.classList.toggle("border-gray-500");
+      target.classList.toggle("hover:bg-gray-500");
+      target.classList.toggle("text-gray-500");
+      target.innerText = "Done";
+      const btnParent = target.parentElement;
+      console.log(btnParent);
+      const btnSibling = btnParent.previousElementSibling;
+      console.log(btnSibling);
+      const textDone = btnSibling.children[0];
+      console.log(textDone);
+      textDone.classList.toggle("text-gray-400");
+      textDone.classList.toggle("line-through");
+      doneNum -= 1;
+      todoDones.innerHTML = doneNum;
+    }
   }
 });
