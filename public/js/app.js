@@ -1,22 +1,25 @@
 let input = document.getElementById("input");
 const add_btn = document.getElementById("btn");
 const removeBtn = document.getElementById("remove");
+let todoEl = document.querySelectorAll(".todoEl");
 let content = document.getElementById("content");
+let numberTodos = document.getElementById("numberTodos");
+const textTodo = document.getElementById("text-todo");
 let idNum = 0;
 
 function newContent(el) {
   content.innerHTML += `<div
   id="todoEl"
-  class="flex py-8 sm:py-0 border-b-2 border-gray-300 sm:border-none sm:mb-8 justify-evenly items-center sm:justify-between transition-all ease-in-out"
+  class="todoEl flex py-8 sm:py-0 border-b-2 border-gray-300 sm:border-none sm:mb-8 justify-evenly items-center sm:justify-between transition-all ease-in-out"
   data-todo-number="${(idNum += 1)}"
 >
   <div class="todo-text w-28 sm:w-96 md:w-72 h-auto text-xl sm:text-2xl">
-    <p class="break-words">
+    <p id="text-todo" class="break-words">
     ${el}
     </p>
   </div>
   <div class="todo-button flex flex-col sm:flex-row h-28 mr-0.5 sm:mr-3 justify-between sm:h-auto">
-    <button
+    <button id="done"
       class="
                   flex-no-shrink
                   p-2
@@ -51,6 +54,7 @@ function newContent(el) {
     </button>
   </div>
 </div>`;
+  numberTodos.innerText = content.childElementCount;
 
   input.value = "";
   return content;
@@ -75,7 +79,7 @@ input.addEventListener("keyup", function (event) {
       newContent(input.value);
     } else {
       alert("Coba Lagi");
-      input.value = ''
+      input.value = "";
     }
   }
 });
@@ -89,7 +93,7 @@ add_btn.addEventListener("click", function (event) {
     newContent(input.value);
   } else {
     alert("Coba Lagi");
-    input.value = ''
+    input.value = "";
   }
 });
 
@@ -102,5 +106,19 @@ window.addEventListener("click", function (event) {
     console.log(event);
     console.log(todoContent);
     todoContent.remove();
+
+    numberTodos.innerText = content.childElementCount;
+  }
+
+  if (target.id === "done") {
+    const btnParent = target.parentElement;
+    console.log(btnParent);
+    const btnSibling = btnParent.previousElementSibling;
+    console.log(btnSibling);
+    const textDone = btnSibling.children[0];
+    console.log(textDone);
+    textDone.classList.toggle('text-green-500')
+    textDone.classList.toggle('line-through')
+
   }
 });
