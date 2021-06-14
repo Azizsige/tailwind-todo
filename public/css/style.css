@@ -1898,6 +1898,10 @@ video {
     flex-direction: row;
   }
 
+  .sm\:self-center {
+    align-self: center;
+  }
+
   .sm\:justify-between {
     justify-content: space-between;
   }
@@ -1932,12 +1936,12 @@ video {
     margin-bottom: 1rem;
   }
 
-  .sm\:ml-4 {
-    margin-left: 1rem;
-  }
-
   .sm\:mb-8 {
     margin-bottom: 2rem;
+  }
+
+  .sm\:-ml-8 {
+    margin-left: -2rem;
   }
 
   .sm\:p-6 {
@@ -1973,6 +1977,10 @@ video {
 
   .sm\:w-96 {
     width: 24rem;
+  }
+
+  .sm\:w-6\/12 {
+    width: 50%;
   }
 
   .sm\:w-full {

@@ -28,7 +28,7 @@ function newContent(el) {
                   flex-no-shrink
                   p-2
                   ml-2
-                  sm:ml-4
+                  sm:-ml-8
                   mr-0
                   sm:mr-2
                   border-2 
@@ -115,6 +115,8 @@ window.addEventListener("click", function (event) {
     todoContent.remove();
 
     numberTodos.innerText = content.childElementCount;
+    doneNum -= 1;
+    todoDones.innerHTML = doneNum;
   }
 
   if (target.id === "done") {
